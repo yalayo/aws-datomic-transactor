@@ -20,12 +20,12 @@ Resources:
         sudo yum install java-1.8.0-openjdk -y
         export XMX=2625m
         export JAVA_OPTS=
-        export AWS_ACCESS_KEY_ID=AKIATMDIBYR47HPTFVPU
-        export AWS_SECRET_ACCESS_KEY=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
+        export AWS_ACCESS_KEY_ID=
+        export AWS_SECRET_ACCESS_KEY=
         export DATOMIC_DEPLOY_BUCKET=deploy-a0dbc565-faf2-4760-9b7e-29a8e45f428e
         export DATOMIC_VERSION=0.9.5656
-        export MY_DATOMIC_USERNAME=rondon.sarnik@gmail.com
-        export MY_DATOMIC_PASSWORD=7eef0fde-5268-40c3-9f5f-36525bd8a4b2
+        export MY_DATOMIC_USERNAME=
+        export MY_DATOMIC_PASSWORD=
         curl -u "$MY_DATOMIC_USERNAME:$MY_DATOMIC_PASSWORD" -SL https://my.datomic.com/repo/com/datomic/datomic-pro/$DATOMIC_VERSION/datomic-pro-$DATOMIC_VERSION.zip -o /tmp/datomic.zip && unzip /tmp/datomic.zip -d /opt && rm -f /tmp/datomic.zip
         cd \/opt\/datomic-pro-$DATOMIC_VERSION 
         cat <<EOF >aws.properties 
@@ -39,7 +39,7 @@ Resources:
         port=80
         memory-index-threshold=32m
         object-cache-max=128m
-        license-key=hvx\/HkWObCoC2iAesriLRFV1\/nC1y4zlFqaNuH0LWsAtDiQbtCFZcCNQwJPEcu9oJmP7w\/f6GxXUQ7JqSB6iU74Azn6nCupeQUxNbzCQXpir+8MOo57K+FPF1+ExLCfOdwjQtdyXlSxPJ8Vmf4coqoD0k32yRhWnuR2Zk70zAyR85wL+5I\/n0jjDKIph+JGD2vVzy+C2Nfq8wokTiLma\/CrkTL9uIO4LjT8ZbRwFcOeVhht9HgTM9wclOG1kFz9VLnEhn4gX6JdWVlOKXH2cjzww+eGAIQtPYkeB1ZL00F5hMWaM8zux5pfmmBCM+kJ5cqntwn33dpqfRL\/4NC1SDw==
+        license-key=f6GxXUQ7JqSB6iU74Azn6nCupeQUxNbzCQXpir+8MOo57K+FPF1+ExLCfOdwjQtdyXlSxPJ8Vmf4coqoD0k32yRhWnuR2Zk70zAyR85wL+5I\/n0jjDKIph+JGD2vVzy+C2Nfq8wokTiLma\/CrkTL9uIO4LjT8ZbRwFcOeVhht9HgTM9wclOG1kFz9VLnEhn4gX6JdWVlOKXH2cjzww+eGAIQtPYkeB1ZL00F5hMWaM8zux5pfmmBCM+kJ5cqntwn33dpqfRL\/4NC1SDw==
         aws-dynamodb-table=dtransactor
         EOF
         chmod 744 aws.properties

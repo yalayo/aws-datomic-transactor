@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: python3.7
+
+  build:
+    commands:
+      - aws cloudformation package --template-file sam.yaml --output-template-file output-sam.yaml --s3-bucket ${DeployBucket}
+artifacts:
+  files:
+    - 'sam.yaml'
+    - 'output-sam.yaml'
+  discard-paths: yes
